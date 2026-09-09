@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aakash Kasamsetty — Data Product Owner</title>
+<meta name="description" content="Data product owner and product engineer in Milwaukee. I take enterprise data and applied AI products from a blank PRD to daily use.">
+<meta name="author" content="Aakash Kasamsetty">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aakash Kasamsetty — Data Product Owner">
+<meta property="og:description" content="Enterprise analytics, big data platforms and applied AI products, owned end to end.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23101E29'/><rect x='6' y='15' width='20' height='2' fill='%238E2647'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E7EBEE;
+    --surface:#F6F8F9;
+    --ink:#101E29;
+    --ink-mid:#4C6273;
+    --rule:#C2CCD3;
+    --accent:#8E2647;
+    --display:"Bricolage Grotesque","Helvetica Neue",sans-serif;
+    --body:"Source Serif 4",Georgia,serif;
+    --col:70ch;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:1.0625rem;
+    line-height:1.62;
+    font-synthesis:none;
+  }
+  ::selection{background:var(--accent);color:var(--surface)}
+  a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
+
+  /* ---------- shell ---------- */
+  .shell{max-width:1180px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+  @media(min-width:1024px){
+    .shell{display:grid;grid-template-columns:170px minmax(0,1fr);gap:5rem;padding:5rem 3rem 8rem}
+  }
+  .rail{display:none}
+  @media(min-width:1024px){
+    .rail{display:block;position:sticky;top:5rem;align-self:start}
+  }
+  .rail-name{font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.3;letter-spacing:-.01em;margin:0 0 1.5rem}
+  .rail-list{list-style:none;margin:0;padding:0;font-family:var(--display);font-weight:500;font-size:.9375rem}
+  .rail-list li{margin-bottom:.4rem}
+  .rail-list a{border-bottom:0;color:var(--ink-mid)}
+  .rail-list a:hover{color:var(--accent)}
+  .main{min-width:0}
+
+  /* ---------- hero ---------- */
+  .hero-name{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(2.75rem,9vw,5.5rem);
+    line-height:.94;
+    letter-spacing:-.035em;
+    margin:0;
+  }
+  .hero-role{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(1.0625rem,2.2vw,1.375rem);
+    line-height:1.35;
+    color:var(--ink-mid);
+    margin:1.1rem 0 0;
+    max-width:34ch;
+  }
+  .hero-lede{margin:1.75rem 0 0;max-width:56ch;font-size:1.125rem}
+  .hero-meta{margin:2rem 0 0;font-family:var(--display);font-weight:500;font-size:.9375rem;display:flex;flex-wrap:wrap;gap:1.5rem}
+  .hero-meta a{border-bottom:1px solid var(--accent);padding-bottom:1px}
+
+  /* ---------- deltas ---------- */
+  .deltas{margin:4.5rem 0 0;border-top:1px solid var(--rule);list-style:none;padding:0}
+  .delta{border-bottom:1px solid var(--rule);padding:1.75rem 0}
+  .delta-figures{display:flex;align-items:baseline;gap:1rem;font-family:var(--display);letter-spacing:-.03em;line-height:1}
+  .delta-from{font-weight:500;font-size:clamp(1.5rem,4vw,2rem);color:var(--ink-mid)}
+  .delta-bar{flex:0 0 auto;width:clamp(2rem,7vw,4.5rem);height:2px;background:var(--accent);transform-origin:left center}
+  .delta-to{font-weight:800;font-size:clamp(2.25rem,7vw,3.5rem);color:var(--accent)}
+  .delta-note{margin:.85rem 0 0;max-width:52ch;color:var(--ink-mid);font-size:1rem}
+  .delta-note b{font-weight:600;color:var(--ink)}
+
+  /* ---------- sections ---------- */
+  .section{margin:5.5rem 0 0}
+  .section-head{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:1.25rem;
+    letter-spacing:-.015em;
+    margin:0 0 2rem;
+    padding-top:1rem;
+    border-top:2px solid var(--ink);
+  }
+  .prose{max-width:var(--col)}
+  .prose p{margin:0 0 1.1rem}
+  .prose p:last-child{margin-bottom:0}
+
+  /* ---------- work records ---------- */
+  .work{list-style:none;margin:0;padding:0}
+  .project{padding:0 0 2.75rem;margin:0 0 2.75rem;border-bottom:1px solid var(--rule)}
+  .project:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .project-title{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:-.025em;line-height:1.12;margin:0}
+  .project-role{font-family:var(--display);font-weight:500;font-size:.9375rem;color:var(--ink-mid);margin:.6rem 0 0}
+  .project-what{margin:1.1rem 0 0;max-width:58ch;font-size:1.125rem}
+  .points{margin:1.4rem 0 0;padding:0;list-style:none;max-width:var(--col)}
+  .points li{position:relative;padding-left:1.4rem;margin-bottom:.8rem}
+  .points li:last-child{margin-bottom:0}
+  .points li::before{content:"";position:absolute;left:0;top:.72em;width:.6rem;height:1px;background:var(--accent)}
+  .points b{font-weight:600}
+  .stack{margin:1.6rem 0 0;font-size:.9375rem;color:var(--ink-mid);max-width:60ch;font-style:italic}
+
+  /* ---------- experience ---------- */
+  .roles{list-style:none;margin:0;padding:0}
+  .role{padding:1.6rem 0;border-top:1px solid var(--rule)}
+  .role:last-child{border-bottom:1px solid var(--rule)}
+  @media(min-width:768px){
+    .role{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2rem}
+  }
+  .role-when{font-family:var(--display);font-weight:500;font-size:.9375rem;color:var(--ink-mid);margin:0}
+  .role-body{min-width:0}
+  .role-title{font-family:var(--display);font-weight:700;font-size:1.1875rem;letter-spacing:-.015em;margin:.15rem 0 0}
+  @media(min-width:768px){.role-title{margin-top:0}}
+  .role-org{color:var(--ink-mid);margin:.2rem 0 0;font-size:1rem}
+  .role-note{margin:.75rem 0 0;max-width:62ch}
+
+  /* ---------- skills ---------- */
+  .skills{list-style:none;margin:0;padding:0;max-width:var(--col)}
+  .skill-group{padding:1.25rem 0;border-top:1px solid var(--rule)}
+  .skill-group:last-child{border-bottom:1px solid var(--rule)}
+  .skill-name{font-family:var(--display);font-weight:700;font-size:1rem;margin:0 0 .35rem}
+  .skill-items{margin:0;color:var(--ink-mid)}
+
+  /* ---------- footer ---------- */
+  .footer{margin:5.5rem 0 0;padding-top:1rem;border-top:2px solid var(--ink)}
+  .footer-line{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,4vw,2.25rem);letter-spacing:-.025em;line-height:1.15;margin:0;max-width:26ch}
+  .footer-links{margin:1.75rem 0 0;padding:0;list-style:none;font-family:var(--display);font-weight:500;display:flex;flex-wrap:wrap;gap:1.5rem}
+  .footer-links a{border-bottom:1px solid var(--accent)}
+  .footer-fine{margin:2.5rem 0 0;font-size:.9375rem;color:var(--ink-mid)}
+
+  /* ---------- one load sequence ---------- */
+  @media(prefers-reduced-motion:no-preference){
+    .delta-bar{animation:draw .5s cubic-bezier(.2,.7,.3,1) both}
+    .delta-to{animation:rise .5s cubic-bezier(.2,.7,.3,1) both}
+    .delta:nth-child(1) .delta-bar{animation-delay:.15s}
+    .delta:nth-child(1) .delta-to{animation-delay:.32s}
+    .delta:nth-child(2) .delta-bar{animation-delay:.28s}
+    .delta:nth-child(2) .delta-to{animation-delay:.45s}
+    .delta:nth-child(3) .delta-bar{animation-delay:.41s}
+    .delta:nth-child(3) .delta-to{animation-delay:.58s}
+    @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @keyframes rise{from{opacity:0;transform:translateY(.35em)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="rail" aria-label="Sections">
+    <p class="rail-name">Aakash<br>Kasamsetty</p>
+    <ul class="rail-list">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+
+    <header>
+      <h1 class="hero-name">Aakash<br>Kasamsetty</h1>
+      <p class="hero-role">Data product owner and product engineer — enterprise analytics and applied AI</p>
+      <p class="hero-lede">I take data and AI products from a blank PRD to something clinicians and analysts use every day: five years of it, most recently owning an ambient clinical scribe and a governed natural-language analytics engine on Google Cloud.</p>
+      <p class="hero-meta">
+        <a href="mailto:kasamsetty.aakash@gmail.com">kasamsetty.aakash@gmail.com</a>
+        <a href="https://linkedin.com/in/aakash236" rel="me">LinkedIn</a>
+        <a href="Aakash_Kasamsetty_Resume.pdf">Resume (PDF)</a>
+      </p>
+    </header>
+
+    <ul class="deltas">
+      <li class="delta">
+        <p class="delta-figures"><span class="delta-from">33%</span><span class="delta-bar" aria-hidden="true"></span><span class="delta-to">84%</span></p>
+        <p class="delta-note">Query execution accuracy on complex multi-table schemas, after I re-grounded the <b>USense</b> text-to-SQL agent in BigQuery metadata.</p>
+      </li>
+      <li class="delta">
+        <p class="delta-figures"><span class="delta-from">12 min</span><span class="delta-bar" aria-hidden="true"></span><span class="delta-to">30 sec</span></p>
+        <p class="delta-note">Visit audio to transcript in <b>UScribe</b>, on self-hosted Whisper endpoints — with a structured 29-field SOAP note inside a minute.</p>
+      </li>
+      <li class="delta">
+        <p class="delta-figures"><span class="delta-from">Nothing</span><span class="delta-bar" aria-hidden="true"></span><span class="delta-to">Live pilot</span></p>
+        <p class="delta-note">Zero to one in a month, MVP in three, and a four-physician practice writing hundreds of real notes a week.</p>
+      </li>
+    </ul>
+
+    <section class="section" id="work">
+      <h2 class="section-head">Selected work</h2>
+      <ul class="work">
+
+        <li class="project">
+          <h3 class="project-title">UScribe</h3>
+          <p class="project-role">Product owner and delivery lead · UpX Labs</p>
+          <p class="project-what">An ambient AI scribe that listens to a clinical visit and returns a structured, reviewable SOAP note.</p>
+          <ul class="points">
+            <li>Owned vision, PRDs, roadmap, backlog and acceptance criteria for a team of eight — three data engineers, two AI developers, a full-stack engineer, QA and design — running delivery in Jira.</li>
+            <li>Architected it GCP-native: FastAPI on Cloud Run, Cloud SQL for PostgreSQL, Cloud Storage, Pub/Sub with dead-letter retries, Identity Platform, all provisioned in Terraform.</li>
+            <li>Ran self-hosted Whisper large-v3-turbo on Vertex AI with GPU autoscaling for peak concurrency, so clinics never queue at the busiest hour.</li>
+            <li>Built the event-driven post-processing on Cloud Functions and Pub/Sub that extracts clinical entities, validates them, and routes payloads into EHR sandboxes.</li>
+            <li>Wrote the governance layer — automated PHI de-identification and compliance guardrails under a GCP Business Associate Agreement — and used clinician edit distance as the quality KPI.</li>
+            <li>Turned a practice demo into an active pilot by keeping clinical and engineering stakeholders reading the same roadmap.</li>
+          </ul>
+          <p class="stack">FastAPI, Cloud Run, Cloud SQL, Pub/Sub, Cloud Functions, Vertex AI, Whisper, Terraform</p>
+        </li>
+
+        <li class="project">
+          <h3 class="project-title">USense</h3>
+          <p class="project-role">Product owner · UpX Labs</p>
+          <p class="project-what">Ask a question in plain English, get a governed answer out of BigQuery, PostgreSQL or Oracle — without waiting on an engineer.</p>
+          <ul class="points">
+            <li>Owned the vision and roadmap for the platform and productized an MCP-based text-to-SQL agent on LangChain and SQLAlchemy.</li>
+            <li>Lifted execution accuracy from a third to <b>84%</b> using Mistral Large with chain-of-thought prompting, dynamic few-shot retrieval and semantic BigQuery metadata grounding.</li>
+            <li>Locked down production access: automated schema introspection, ChromaDB vector indexing, RBAC enforcement, and a query parser that refuses anything that isn't a read.</li>
+            <li>Set the partitioned and clustered table modeling guidelines, query cost guardrails and audit logging that keep analytical compute spend predictable.</li>
+          </ul>
+          <p class="stack">BigQuery, Model Context Protocol, LangChain, SQLAlchemy, ChromaDB, Mistral Large</p>
+        </li>
+
+        <li class="project">
+          <h3 class="project-title">Project Vox</h3>
+          <p class="project-role">Product definition · UpX Labs</p>
+          <p class="project-what">A low-latency conversational AI receptionist for small businesses.</p>
+          <ul class="points">
+            <li>Authored the PRDs and the zero-to-one roadmap, mapping business user stories onto an MCP tool-orchestration engine.</li>
+            <li>Set alpha exit criteria that were actually testable: no hallucinated answers, every tool call valid, every calendar slot verified before it's offered.</li>
+            <li>Designed an owner dashboard where a business can place a WebRTC test call and hear the agent for themselves.</li>
+          </ul>
+        </li>
+
+        <li class="project">
+          <h3 class="project-title">Up Your Experience program</h3>
+          <p class="project-role">Technical program management and Agile coaching · UpX Labs</p>
+          <p class="project-what">A sprint-based program where learners ship a real AI or data product instead of a tutorial.</p>
+          <ul class="points">
+            <li>Coached 40+ learners across five cohorts to a 95% completion rate and 91% satisfaction.</li>
+            <li>Decomposed enterprise AI architectures into four-week sprints, then ran planning, grooming, standups and code review for rotating multidisciplinary teams.</li>
+          </ul>
+        </li>
+
+      </ul>
+    </section>
+
+    <section class="section" id="experience">
+      <h2 class="section-head">Experience</h2>
+      <ul class="roles">
+
+        <li class="role">
+          <p class="role-when">Nov 2025 — present</p>
+          <div class="role-body">
+            <h3 class="role-title">Product Manager</h3>
+            <p class="role-org">UpX Labs · San Jose, CA (remote)</p>
+            <p class="role-note">Product engineer from Aug 2024 to Nov 2025. Owner of UScribe and USense, and program lead for the UpX cohorts.</p>
+          </div>
+        </li>
+
+        <li class="role">
+          <p class="role-when">Mar 2023 — May 2024</p>
+          <div class="role-body">
+            <h3 class="role-title">Data Analyst, Graduate Assistant</h3>
+            <p class="role-org">University of Wisconsin–Milwaukee</p>
+            <p class="role-note">Mined five years of course registration, waitlist and resource utilization data in PostgreSQL and Excel VBA to find the real bottlenecks, then built the Power BI dashboards that leadership used to cut unmet course demand by 18%.</p>
+          </div>
+        </li>
+
+        <li class="role">
+          <p class="role-when">Oct 2020 — Dec 2022</p>
+          <div class="role-body">
+            <h3 class="role-title">Big Data Engineer</h3>
+            <p class="role-org">Capgemini Technology Services · Pune, India</p>
+            <p class="role-note">Built the Talend ETL pipelines that landed terabyte-scale health insurance claims into BigQuery on star and snowflake schemas. Tuned views, partitions and scheduled queries until enterprise reporting ran 35% faster, and shipped the patient leakage and retention dashboards behind a 2.07% lift in quarterly retention.</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section class="section" id="skills">
+      <h2 class="section-head">What I work with</h2>
+      <ul class="skills">
+        <li class="skill-group">
+          <h3 class="skill-name">Product and delivery</h3>
+          <p class="skill-items">Product vision and strategy, PRDs, roadmap planning, backlog prioritization, user stories and acceptance criteria, Agile and Scrum leadership, sprint planning and grooming, stakeholder alignment, KPI monitoring, Jira, Confluence</p>
+        </li>
+        <li class="skill-group">
+          <h3 class="skill-name">Data and analytics</h3>
+          <p class="skill-items">Google BigQuery, data warehousing, data governance, star and snowflake modeling, data quality and profiling, Looker, Power BI, Tableau, PostgreSQL, MySQL, Oracle, SQL Server, MongoDB, Hadoop, Talend, Excel VBA</p>
+        </li>
+        <li class="skill-group">
+          <h3 class="skill-name">Cloud and infrastructure</h3>
+          <p class="skill-items">GCP — BigQuery, Cloud Run, Vertex AI, Cloud Storage, Pub/Sub, Cloud Functions, Cloud SQL, IAM — plus Terraform, Docker, Prometheus, ELK Stack and AWS</p>
+        </li>
+        <li class="skill-group">
+          <h3 class="skill-name">AI systems</h3>
+          <p class="skill-items">Model Context Protocol, advanced RAG (HyDE, query decomposition, schema grounding), NL-to-SQL, LLM evaluation and benchmarking, ASR with Whisper large-v3-turbo, LangChain, Vertex AI, Ollama, Mistral, Llama 3.2, ChromaDB, Qdrant</p>
+        </li>
+        <li class="skill-group">
+          <h3 class="skill-name">Backend and governance</h3>
+          <p class="skill-items">FastAPI, REST APIs, WebSockets, SQLAlchemy, asynchronous pipelines with Pub/Sub and dead-letter queues, OAuth 2.0, RBAC, HIPAA and PHI compliance, data privacy and encryption</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="education">
+      <h2 class="section-head">Education and certifications</h2>
+      <ul class="roles">
+        <li class="role">
+          <p class="role-when">May 2024</p>
+          <div class="role-body">
+            <h3 class="role-title">M.S., Information Technology Management</h3>
+            <p class="role-org">University of Wisconsin–Milwaukee</p>
+            <p class="role-note">Service-oriented analysis and design, database management systems, machine learning, web analytics.</p>
+          </div>
+        </li>
+        <li class="role">
+          <p class="role-when">Jun 2020</p>
+          <div class="role-body">
+            <h3 class="role-title">B.Tech., Mechanical Engineering</h3>
+            <p class="role-org">National Institute of Technology, Raipur</p>
+          </div>
+        </li>
+        <li class="role">
+          <p class="role-when">Certifications</p>
+          <div class="role-body">
+            <p class="role-note" style="margin-top:0">Building a HIPAA Compliance Program (LinkedIn Learning) · Agile Software Development (University of Minnesota) · Talend Data Integration Advanced (Talend Academy)</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer" id="contact">
+      <p class="footer-line">Have a data product that needs an owner?</p>
+      <ul class="footer-links">
+        <li><a href="mailto:kasamsetty.aakash@gmail.com">Email me</a></li>
+        <li><a href="https://linkedin.com/in/aakash236">LinkedIn</a></li>
+        <li><a href="Aakash_Kasamsetty_Resume.pdf">Download resume</a></li>
+      </ul>
+      <p class="footer-fine">Milwaukee, Wisconsin · open to remote</p>
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
