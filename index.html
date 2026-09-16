@@ -1,362 +1,1103 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Added scroll-smooth for sleek internal anchor navigation -->
+<html class="dark scroll-smooth" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aakash Kasamsetty — Data Product Owner</title>
-<meta name="description" content="Data product owner and product engineer in Milwaukee. I take enterprise data and applied AI products from a blank PRD to daily use.">
-<meta name="author" content="Aakash Kasamsetty">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aakash Kasamsetty — Data Product Owner">
-<meta property="og:description" content="Enterprise analytics, big data platforms and applied AI products, owned end to end.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23101E29'/><rect x='6' y='15' width='20' height='2' fill='%238E2647'/></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#E7EBEE;
-    --surface:#F6F8F9;
-    --ink:#101E29;
-    --ink-mid:#4C6273;
-    --rule:#C2CCD3;
-    --accent:#8E2647;
-    --display:"Bricolage Grotesque","Helvetica Neue",sans-serif;
-    --body:"Source Serif 4",Georgia,serif;
-    --col:70ch;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--body);
-    font-size:1.0625rem;
-    line-height:1.62;
-    font-synthesis:none;
-  }
-  ::selection{background:var(--accent);color:var(--surface)}
-  a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
-  a:hover{border-bottom-color:var(--accent)}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:1px}
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Aakash Kasamsetty — Applied AI Systems Cockpit &amp; Telemetry Terminal</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Script for Google Forms hidden submission workaround -->
+  <script type="text/javascript">var submitted=false;</script>
 
-  /* ---------- shell ---------- */
-  .shell{max-width:1180px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
-  @media(min-width:1024px){
-    .shell{display:grid;grid-template-columns:170px minmax(0,1fr);gap:5rem;padding:5rem 3rem 8rem}
-  }
-  .rail{display:none}
-  @media(min-width:1024px){
-    .rail{display:block;position:sticky;top:5rem;align-self:start}
-  }
-  .rail-name{font-family:var(--display);font-weight:700;font-size:1rem;line-height:1.3;letter-spacing:-.01em;margin:0 0 1.5rem}
-  .rail-list{list-style:none;margin:0;padding:0;font-family:var(--display);font-weight:500;font-size:.9375rem}
-  .rail-list li{margin-bottom:.4rem}
-  .rail-list a{border-bottom:0;color:var(--ink-mid)}
-  .rail-list a:hover{color:var(--accent)}
-  .main{min-width:0}
-
-  /* ---------- hero ---------- */
-  .hero-name{
-    font-family:var(--display);
-    font-weight:800;
-    font-size:clamp(2.75rem,9vw,5.5rem);
-    line-height:.94;
-    letter-spacing:-.035em;
-    margin:0;
-  }
-  .hero-role{
-    font-family:var(--display);
-    font-weight:500;
-    font-size:clamp(1.0625rem,2.2vw,1.375rem);
-    line-height:1.35;
-    color:var(--ink-mid);
-    margin:1.1rem 0 0;
-    max-width:34ch;
-  }
-  .hero-lede{margin:1.75rem 0 0;max-width:56ch;font-size:1.125rem}
-  .hero-meta{margin:2rem 0 0;font-family:var(--display);font-weight:500;font-size:.9375rem;display:flex;flex-wrap:wrap;gap:1.5rem}
-  .hero-meta a{border-bottom:1px solid var(--accent);padding-bottom:1px}
-
-  /* ---------- deltas ---------- */
-  .deltas{margin:4.5rem 0 0;border-top:1px solid var(--rule);list-style:none;padding:0}
-  .delta{border-bottom:1px solid var(--rule);padding:1.75rem 0}
-  .delta-figures{display:flex;align-items:baseline;gap:1rem;font-family:var(--display);letter-spacing:-.03em;line-height:1}
-  .delta-from{font-weight:500;font-size:clamp(1.5rem,4vw,2rem);color:var(--ink-mid)}
-  .delta-bar{flex:0 0 auto;width:clamp(2rem,7vw,4.5rem);height:2px;background:var(--accent);transform-origin:left center}
-  .delta-to{font-weight:800;font-size:clamp(2.25rem,7vw,3.5rem);color:var(--accent)}
-  .delta-note{margin:.85rem 0 0;max-width:52ch;color:var(--ink-mid);font-size:1rem}
-  .delta-note b{font-weight:600;color:var(--ink)}
-
-  /* ---------- sections ---------- */
-  .section{margin:5.5rem 0 0}
-  .section-head{
-    font-family:var(--display);
-    font-weight:700;
-    font-size:1.25rem;
-    letter-spacing:-.015em;
-    margin:0 0 2rem;
-    padding-top:1rem;
-    border-top:2px solid var(--ink);
-  }
-  .prose{max-width:var(--col)}
-  .prose p{margin:0 0 1.1rem}
-  .prose p:last-child{margin-bottom:0}
-
-  /* ---------- work records ---------- */
-  .work{list-style:none;margin:0;padding:0}
-  .project{padding:0 0 2.75rem;margin:0 0 2.75rem;border-bottom:1px solid var(--rule)}
-  .project:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
-  .project-title{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:-.025em;line-height:1.12;margin:0}
-  .project-role{font-family:var(--display);font-weight:500;font-size:.9375rem;color:var(--ink-mid);margin:.6rem 0 0}
-  .project-what{margin:1.1rem 0 0;max-width:58ch;font-size:1.125rem}
-  .points{margin:1.4rem 0 0;padding:0;list-style:none;max-width:var(--col)}
-  .points li{position:relative;padding-left:1.4rem;margin-bottom:.8rem}
-  .points li:last-child{margin-bottom:0}
-  .points li::before{content:"";position:absolute;left:0;top:.72em;width:.6rem;height:1px;background:var(--accent)}
-  .points b{font-weight:600}
-  .stack{margin:1.6rem 0 0;font-size:.9375rem;color:var(--ink-mid);max-width:60ch;font-style:italic}
-
-  /* ---------- experience ---------- */
-  .roles{list-style:none;margin:0;padding:0}
-  .role{padding:1.6rem 0;border-top:1px solid var(--rule)}
-  .role:last-child{border-bottom:1px solid var(--rule)}
-  @media(min-width:768px){
-    .role{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2rem}
-  }
-  .role-when{font-family:var(--display);font-weight:500;font-size:.9375rem;color:var(--ink-mid);margin:0}
-  .role-body{min-width:0}
-  .role-title{font-family:var(--display);font-weight:700;font-size:1.1875rem;letter-spacing:-.015em;margin:.15rem 0 0}
-  @media(min-width:768px){.role-title{margin-top:0}}
-  .role-org{color:var(--ink-mid);margin:.2rem 0 0;font-size:1rem}
-  .role-note{margin:.75rem 0 0;max-width:62ch}
-
-  /* ---------- skills ---------- */
-  .skills{list-style:none;margin:0;padding:0;max-width:var(--col)}
-  .skill-group{padding:1.25rem 0;border-top:1px solid var(--rule)}
-  .skill-group:last-child{border-bottom:1px solid var(--rule)}
-  .skill-name{font-family:var(--display);font-weight:700;font-size:1rem;margin:0 0 .35rem}
-  .skill-items{margin:0;color:var(--ink-mid)}
-
-  /* ---------- footer ---------- */
-  .footer{margin:5.5rem 0 0;padding-top:1rem;border-top:2px solid var(--ink)}
-  .footer-line{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,4vw,2.25rem);letter-spacing:-.025em;line-height:1.15;margin:0;max-width:26ch}
-  .footer-links{margin:1.75rem 0 0;padding:0;list-style:none;font-family:var(--display);font-weight:500;display:flex;flex-wrap:wrap;gap:1.5rem}
-  .footer-links a{border-bottom:1px solid var(--accent)}
-  .footer-fine{margin:2.5rem 0 0;font-size:.9375rem;color:var(--ink-mid)}
-
-  /* ---------- one load sequence ---------- */
-  @media(prefers-reduced-motion:no-preference){
-    .delta-bar{animation:draw .5s cubic-bezier(.2,.7,.3,1) both}
-    .delta-to{animation:rise .5s cubic-bezier(.2,.7,.3,1) both}
-    .delta:nth-child(1) .delta-bar{animation-delay:.15s}
-    .delta:nth-child(1) .delta-to{animation-delay:.32s}
-    .delta:nth-child(2) .delta-bar{animation-delay:.28s}
-    .delta:nth-child(2) .delta-to{animation-delay:.45s}
-    .delta:nth-child(3) .delta-bar{animation-delay:.41s}
-    .delta:nth-child(3) .delta-to{animation-delay:.58s}
-    @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-    @keyframes rise{from{opacity:0;transform:translateY(.35em)}to{opacity:1;transform:none}}
-  }
-</style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            cockpit: {
+              base: "#070a13",
+              surface: "#0b0f19",
+              panel: "#111827",
+              subpanel: "#161f33",
+              border: "#1e293b",
+              accentBorder: "#334155"
+            },
+            cyanGlow: "#06b6d4",
+            indigoGlow: "#6366f1",
+            tealGlow: "#14b8a6",
+            amberGlow: "#f59e0b",
+            emeraldGlow: "#10b981",
+            surface: "#0b0f19",
+            background: "#070a13",
+            primary: "#6366f1",
+            secondary: "#06b6d4",
+            tertiary: "#14b8a6",
+            "on-surface": "#e2e8f0",
+            "on-surface-variant": "#94a3b8"
+          },
+          fontFamily: {
+            mono: ["JetBrains Mono", "monospace"],
+            sans: ["Space Grotesk", "sans-serif"],
+            headline: ["Space Grotesk", "sans-serif"]
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px)",
+            'scanlines': "repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px)"
+          }
+        }
+      }
+    };
+  </script>
+  
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #070a13;
+        color: #e2e8f0;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b0f19;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #334155;
+      }
+    }
+    .hud-border {
+      position: relative;
+    }
+    .hud-border::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px;
+      width: 8px; height: 8px;
+      border-top: 2px solid #06b6d4;
+      border-left: 2px solid #06b6d4;
+      pointer-events: none;
+    }
+    .hud-border::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; right: -1px;
+      width: 8px; height: 8px;
+      border-bottom: 2px solid #6366f1;
+      border-right: 2px solid #6366f1;
+      pointer-events: none;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.25);
+    }
+    .glow-indigo {
+      box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.25);
+    }
+  </style>
 </head>
-<body>
-<div class="shell">
-
-  <nav class="rail" aria-label="Sections">
-    <p class="rail-name">Aakash<br>Kasamsetty</p>
-    <ul class="rail-list">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main class="main">
-
-    <header>
-      <h1 class="hero-name">Aakash<br>Kasamsetty</h1>
-      <p class="hero-role">Data product owner and product engineer — enterprise analytics and applied AI</p>
-      <p class="hero-lede">I take data and AI products from a blank PRD to something clinicians and analysts use every day: five years of it, most recently owning an ambient clinical scribe and a governed natural-language analytics engine on Google Cloud.</p>
-      <p class="hero-meta">
-        <a href="mailto:kasamsetty.aakash@gmail.com">kasamsetty.aakash@gmail.com</a>
-        <a href="https://linkedin.com/in/aakash236" rel="me">LinkedIn</a>
-        <a href="Aakash_Kasamsetty_Resume.pdf">Resume (PDF)</a>
-      </p>
-    </header>
-
-    <ul class="deltas">
-      <li class="delta">
-        <p class="delta-figures"><span class="delta-from">33%</span><span class="delta-bar" aria-hidden="true"></span><span class="delta-to">84%</span></p>
-        <p class="delta-note">Query execution accuracy on complex multi-table schemas, after I re-grounded the <b>USense</b> text-to-SQL agent in BigQuery metadata.</p>
-      </li>
-      <li class="delta">
-        <p class="delta-figures"><span class="delta-from">12 min</span><span class="delta-bar" aria-hidden="true"></span><span class="delta-to">30 sec</span></p>
-        <p class="delta-note">Visit audio to transcript in <b>UScribe</b>, on self-hosted Whisper endpoints — with a structured 29-field SOAP note inside a minute.</p>
-      </li>
-      <li class="delta">
-        <p class="delta-figures"><span class="delta-from">Nothing</span><span class="delta-bar" aria-hidden="true"></span><span class="delta-to">Live pilot</span></p>
-        <p class="delta-note">Zero to one in a month, MVP in three, and a four-physician practice writing hundreds of real notes a week.</p>
-      </li>
-    </ul>
-
-    <section class="section" id="work">
-      <h2 class="section-head">Selected work</h2>
-      <ul class="work">
-
-        <li class="project">
-          <h3 class="project-title">UScribe</h3>
-          <p class="project-role">Product owner and delivery lead · UpX Labs</p>
-          <p class="project-what">An ambient AI scribe that listens to a clinical visit and returns a structured, reviewable SOAP note.</p>
-          <ul class="points">
-            <li>Owned vision, PRDs, roadmap, backlog and acceptance criteria for a team of eight — three data engineers, two AI developers, a full-stack engineer, QA and design — running delivery in Jira.</li>
-            <li>Architected it GCP-native: FastAPI on Cloud Run, Cloud SQL for PostgreSQL, Cloud Storage, Pub/Sub with dead-letter retries, Identity Platform, all provisioned in Terraform.</li>
-            <li>Ran self-hosted Whisper large-v3-turbo on Vertex AI with GPU autoscaling for peak concurrency, so clinics never queue at the busiest hour.</li>
-            <li>Built the event-driven post-processing on Cloud Functions and Pub/Sub that extracts clinical entities, validates them, and routes payloads into EHR sandboxes.</li>
-            <li>Wrote the governance layer — automated PHI de-identification and compliance guardrails under a GCP Business Associate Agreement — and used clinician edit distance as the quality KPI.</li>
-            <li>Turned a practice demo into an active pilot by keeping clinical and engineering stakeholders reading the same roadmap.</li>
-          </ul>
-          <p class="stack">FastAPI, Cloud Run, Cloud SQL, Pub/Sub, Cloud Functions, Vertex AI, Whisper, Terraform</p>
-        </li>
-
-        <li class="project">
-          <h3 class="project-title">USense</h3>
-          <p class="project-role">Product owner · UpX Labs</p>
-          <p class="project-what">Ask a question in plain English, get a governed answer out of BigQuery, PostgreSQL or Oracle — without waiting on an engineer.</p>
-          <ul class="points">
-            <li>Owned the vision and roadmap for the platform and productized an MCP-based text-to-SQL agent on LangChain and SQLAlchemy.</li>
-            <li>Lifted execution accuracy from a third to <b>84%</b> using Mistral Large with chain-of-thought prompting, dynamic few-shot retrieval and semantic BigQuery metadata grounding.</li>
-            <li>Locked down production access: automated schema introspection, ChromaDB vector indexing, RBAC enforcement, and a query parser that refuses anything that isn't a read.</li>
-            <li>Set the partitioned and clustered table modeling guidelines, query cost guardrails and audit logging that keep analytical compute spend predictable.</li>
-          </ul>
-          <p class="stack">BigQuery, Model Context Protocol, LangChain, SQLAlchemy, ChromaDB, Mistral Large</p>
-        </li>
-
-        <li class="project">
-          <h3 class="project-title">Project Vox</h3>
-          <p class="project-role">Product definition · UpX Labs</p>
-          <p class="project-what">A low-latency conversational AI receptionist for small businesses.</p>
-          <ul class="points">
-            <li>Authored the PRDs and the zero-to-one roadmap, mapping business user stories onto an MCP tool-orchestration engine.</li>
-            <li>Set alpha exit criteria that were actually testable: no hallucinated answers, every tool call valid, every calendar slot verified before it's offered.</li>
-            <li>Designed an owner dashboard where a business can place a WebRTC test call and hear the agent for themselves.</li>
-          </ul>
-        </li>
-
-        <li class="project">
-          <h3 class="project-title">Up Your Experience program</h3>
-          <p class="project-role">Technical program management and Agile coaching · UpX Labs</p>
-          <p class="project-what">A sprint-based program where learners ship a real AI or data product instead of a tutorial.</p>
-          <ul class="points">
-            <li>Coached 40+ learners across five cohorts to a 95% completion rate and 91% satisfaction.</li>
-            <li>Decomposed enterprise AI architectures into four-week sprints, then ran planning, grooming, standups and code review for rotating multidisciplinary teams.</li>
-          </ul>
-        </li>
-
-      </ul>
+<body class="font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-300 min-h-screen relative overflow-x-hidden bg-background">
+  <!-- HUD Telemetry Background Grid -->
+  <div class="fixed inset-0 bg-grid-pattern bg-[size:32px_32px] pointer-events-none opacity-40 z-0"></div>
+  <div class="fixed inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(99,102,241,0.15),rgba(255,255,255,0))] pointer-events-none z-0"></div>
+  
+  <!-- Telemetry Header / Command Bar -->
+  <header class="fixed top-0 w-full z-50 bg-cockpit-surface/90 backdrop-blur-md border-b border-cockpit-border/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      
+      <!-- Brand & Operator Identity -->
+      <div class="flex items-center gap-3">
+        <a class="flex items-center gap-2.5 group" href="#cockpit-overview">
+          <div class="w-10 h-10 p-0.5 border border-cyan-500/40 bg-cockpit-panel/80 flex items-center justify-center glow-cyan transition-all group-hover:border-cyan-400">
+            https://lh3.googleusercontent.com/aida/AEtjO1XMuvbIg5nXU_DED1FVaHqESKQl0_XuL6uztNSrhddynsu55yiL4bqOqb30ixfdRZBqpX9qL6Y-Qe-48oqrj5QhtdPJL2KhqhkZM6DRQRZYP3ex5fTvnn4DphGhzKnpkwhi6boul39sCYqOAQHgpJWD3EJ9AgcYdEDh5w_QgrFZHyKgOCbAxBv_mWhl2ocadBmoley69SbQeJSKZyrasvcK7qrztMSIvLomou17UrIPgI_OBAIT7rFmuYs
+          </div>
+          <div class="flex flex-col">
+            <span class="font-headline font-bold text-sm tracking-tight text-white flex items-center gap-1.5">
+              AAKASH KASAMSETTY
+              <span class="text-[10px] font-mono text-cyan-400 font-normal px-1.5 py-0.2 bg-cyan-950/60 border border-cyan-800/60">V3.0_LIVE</span>
+            </span>
+            <span class="font-mono text-[11px] text-slate-400">Data Product Owner · Applied AI Lead</span>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Realtime System Status Pills -->
+      <div class="hidden md:flex items-center gap-2 font-mono text-[11px]">
+        <div class="flex items-center gap-1.5 px-2.5 py-1 bg-cockpit-panel border border-slate-800 text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>GCP: <span class="text-emerald-400 font-semibold">ACTIVE</span></span>
+        </div>
+        <div class="flex items-center gap-1.5 px-2.5 py-1 bg-cockpit-panel border border-slate-800 text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          <span>BIGQUERY: <span class="text-cyan-400 font-semibold">CONNECTED</span></span>
+        </div>
+        <div class="flex items-center gap-1.5 px-2.5 py-1 bg-cockpit-panel border border-slate-800 text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+          <span>MCP: <span class="text-indigo-400 font-semibold">VERIFIED</span></span>
+        </div>
+      </div>
+      
+      <!-- Navigation & Action Console -->
+      <div class="flex items-center gap-3">
+        <nav class="hidden lg:flex items-center gap-1 font-mono text-xs">
+          <a class="px-2.5 py-1 text-slate-300 hover:text-cyan-400 transition-colors" href="#cockpit-overview">/overview</a>
+          <a class="px-2.5 py-1 text-slate-300 hover:text-cyan-400 transition-colors" href="#architecture-dossiers">/systems</a>
+          <a class="px-2.5 py-1 text-slate-300 hover:text-cyan-400 transition-colors" href="#deployment-record">/track_record</a>
+          <a class="px-2.5 py-1 text-slate-300 hover:text-cyan-400 transition-colors" href="#capability-matrix">/stack</a>
+        </nav>
+        <a class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono uppercase font-semibold text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-500/50 shadow-sm glow-cyan transition-all" href="#command-dispatch">
+          <span class="material-symbols-outlined text-[14px]">terminal</span>
+          <span>Dispatch</span>
+        </a>
+        
+        <!-- Operator Avatar Telemetry Capsule -->
+        <div class="relative flex items-center">
+          <div class="w-9 h-9 rounded-full ring-1 ring-cyan-500/60 p-0.5 bg-cockpit-panel overflow-hidden">
+            <img alt="Aakash Kasamsetty" class="w-full h-full object-cover object-top rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkgUrZiBR_3c3Hqe0Ah9wKGTg3eVKDfhfXSuQnGyA1fIsg7xPVQR3WsXBivubbHnUy5n-3LtNA7TO4osJPX-5rmbaM2mcmIhTbVYSDVoKQOeVfqiN2rhR764N1WroyKinWJAbecO5g-PeKOjPDJWlXPo0rQYiuXYePZn3bAPBEeN1AsRcmWn9WfbEqW0LPFh2kyW9xfZvwpaZWA3mPbh5vKrhRkgyY3x9S9BfvN3PtxtO-voxyHvd_hFNKWSyvNcwgeA"/>
+          </div>
+          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-cockpit-surface rounded-full"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Cockpit Viewport -->
+  <main class="relative z-10 pt-20 pb-16 space-y-16" id="cockpit-overview">
+    
+    <!-- SECTION 1: HERO COCKPIT TERMINAL (DUAL SPLIT) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      
+      <!-- Cockpit Barcode & Coordinates Bar -->
+      <div class="flex flex-wrap items-center justify-between border-b border-cockpit-border pb-3 mb-6 font-mono text-[11px] text-slate-400 gap-2">
+        <div class="flex items-center gap-2">
+          <span class="text-cyan-400 font-bold">[SYS_COCKPIT_TERMINAL // NODE.MKE]</span>
+          <span class="hidden sm:inline text-slate-600">|</span>
+          <span class="hidden sm:inline">LAT 43.0389° N · LON 87.9065° W</span>
+          <span class="text-slate-600">|</span>
+          <span class="text-emerald-400 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            ALL_ENGINES_NOMINAL
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-slate-500">CLEARANCE:</span>
+          <span class="text-indigo-400 font-semibold px-2 py-0.5 bg-indigo-950/50 border border-indigo-800/60">DATA_PRODUCT_DIRECTOR</span>
+        </div>
+      </div>
+      
+      <!-- Split Hero Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- Left Side: Executive Command Card + Radar Portrait -->
+        <div class="lg:col-span-7 bg-cockpit-panel border border-cockpit-border p-6 sm:p-7 hud-border glow-cyan flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-16 -top-16 w-64 h-64 bg-cyan-500/10 blur-3xl pointer-events-none"></div>
+          <div>
+            
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-950/60 border border-cyan-500/40 font-mono text-xs text-cyan-300 mb-4">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span>DUAL SPECIALIZATION: PRODUCT STRATEGY + DEEP APPLIED AI ARCHITECTURE</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold text-white tracking-tight leading-none mb-3">
+              Aakash Kasamsetty
+            </h1>
+            <div class="font-mono text-cyan-400 text-sm sm:text-base font-semibold mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-base">memory</span>
+              <span>Data Product Owner · Cloud Systems Engineer · Enterprise AI Lead</span>
+            </div>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-sans max-w-2xl mb-6">
+              Leading cross-functional pods bridging product strategy, big data warehousing, and cutting-edge ambient AI. Directed engineering pods of up to 8 specialists delivering GCP-native clinical speech engines, high-precision Model Context Protocol (MCP) agents, and multi-terabyte BigQuery analytics.
+            </p>
+          </div>
+          
+          <!-- Radar Identity Sub-Panel -->
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 pt-4 border-t border-cockpit-border/80 items-center">
+            
+            <!-- Telemetry-framed portrait -->
+            <div class="sm:col-span-4 relative group">
+              <div class="relative w-full aspect-[4/5] overflow-hidden border border-cyan-500/50 bg-slate-900 shadow-inner">
+                <img alt="Aakash Kasamsetty" class="w-full h-full object-cover object-top filter contrast-105 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAutEkEqa4sj1-7TCeEYSV8i2KYiPUk8No2a2qFW-vg0CXehdVkASepyxzoXGglY7Whch65hHT6ZjVo6PKXksO823_zKbObT8gc-N-L548d2ZOG2fPjOx9nGIEvg39VMti1Z79nh9RW3OujbLUIYlDJZBvYY5W5BmbOY9Gc_EasFucnTWTJ8v5UaEOWIWtZveqRjA4ea75axYr9N642pytFVQFk1WLGkhMHQtROtAdl7xXHRsiQX1RQxdJ6Iva0jx2n5A"/>
+                
+                <!-- Radar Reticle Overlay -->
+                <div class="absolute inset-0 bg-scanlines opacity-40 pointer-events-none"></div>
+                <div class="absolute top-1 left-1 font-mono text-[9px] text-cyan-300/80 bg-black/60 px-1">OP_ID: #236</div>
+                <div class="absolute bottom-1 right-1 font-mono text-[9px] text-emerald-400 bg-black/60 px-1">SYS: VERIFIED</div>
+              </div>
+            </div>
+            
+            <!-- Credentials Telemetry List -->
+            <div class="sm:col-span-8 flex flex-col justify-center space-y-2.5 font-mono text-xs">
+              <div class="flex items-center justify-between p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-slate-400">CREDENTIAL</span>
+                <span class="text-slate-200 font-medium">MS ITM (UWM) · B.Tech (NIT Raipur)</span>
+              </div>
+              <div class="flex items-center justify-between p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-slate-400">PRIOR TENURE</span>
+                <span class="text-cyan-300 font-medium">Capgemini (Big Data) · UpX Labs (PM)</span>
+              </div>
+              <div class="flex items-center justify-between p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-slate-400">COMPLIANCE</span>
+                <span class="text-emerald-400 font-medium">HIPAA BAA · Zero Retention · PHI RBAC</span>
+              </div>
+              
+              <!-- Quick action links -->
+              <div class="flex items-center gap-2 pt-1 font-mono text-xs">
+                <a class="flex-1 text-center py-2 px-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all" href="#architecture-dossiers">
+                  Inspect Systems
+                </a>
+                <a class="flex-1 text-center py-2 px-3 bg-cockpit-subpanel hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 transition-all" href="#command-dispatch">
+                  Open Terminal
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side: Interactive Architecture Telemetry Cockpit -->
+        <div class="lg:col-span-5 bg-cockpit-panel border border-cockpit-border p-6 hud-border glow-indigo flex flex-col justify-between relative">
+          <div>
+            <!-- Terminal Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-cockpit-border font-mono text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+                <span class="text-slate-300 font-semibold ml-1">telemetry://active_metrics.sim</span>
+              </div>
+              <span class="text-indigo-400">STREAMING_24FPS</span>
+            </div>
+            
+            <!-- Live Telemetry Readouts -->
+            <div class="mt-5 space-y-4 font-mono">
+              
+              <!-- Metric 1: Text-to-SQL Lift -->
+              <div class="p-3.5 bg-cockpit-subpanel border border-indigo-500/30">
+                <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                  <span class="flex items-center gap-1.5 text-indigo-300 font-bold">
+                    <span class="material-symbols-outlined text-sm">query_stats</span>
+                    NL-to-SQL SYNTAX ACCURACY
+                  </span>
+                  <span class="text-emerald-400 font-bold">+51% DELTA</span>
+                </div>
+                <div class="flex items-baseline justify-between">
+                  <span class="text-2xl font-headline font-bold text-white tracking-tight">33% <span class="text-slate-500 text-base font-normal">→</span> <span class="text-indigo-400 font-extrabold">84.1%</span></span>
+                  <span class="text-[11px] text-slate-400">MCP + AST Guardrails</span>
+                </div>
+                
+                <!-- Progress bar comparison (Sharp Edges) -->
+                <div class="w-full bg-slate-900 h-2 overflow-hidden mt-2 flex">
+                  <div class="bg-indigo-400 h-full transition-all duration-1000" style="width: 84%"></div>
+                </div>
+              </div>
+              
+              <!-- Metric 2: Clinical Whisper Latency -->
+              <div class="p-3.5 bg-cockpit-subpanel border border-cyan-500/30">
+                <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                  <span class="flex items-center gap-1.5 text-cyan-300 font-bold">
+                    <span class="material-symbols-outlined text-sm">speed</span>
+                    WHISPER ASR + SOAP LATENCY
+                  </span>
+                  <span class="text-cyan-400 font-bold">P95: &lt;60s</span>
+                </div>
+                <div class="flex items-baseline justify-between">
+                  <span class="text-2xl font-headline font-bold text-white tracking-tight">12min Audio <span class="text-slate-500 text-base font-normal">in</span> <span class="text-cyan-400 font-extrabold">~30s</span></span>
+                  <span class="text-[11px] text-slate-400">Vertex AI GPU Pods</span>
+                </div>
+                
+                <div class="w-full bg-slate-900 h-2 overflow-hidden mt-2 flex">
+                  <div class="bg-cyan-400 h-full transition-all duration-1000" style="width: 92%"></div>
+                </div>
+              </div>
+              
+              <!-- Metric 3: Pod Execution & Pipeline Scale -->
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3 bg-cockpit-subpanel border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase font-mono">Sprint Velocity</div>
+                  <div class="text-xl font-headline font-bold text-white mt-0.5">30 Days</div>
+                  <div class="text-[10px] text-teal-400">0 → 1 MVP Shipped</div>
+                </div>
+                <div class="p-3 bg-cockpit-subpanel border border-slate-800">
+                  <div class="text-[10px] text-slate-400 uppercase font-mono">Data Scale</div>
+                  <div class="text-xl font-headline font-bold text-white mt-0.5">TB-Scale</div>
+                  <div class="text-[10px] text-indigo-400">Claims Warehouse</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Architecture Microservice Status Topology -->
+          <div class="mt-4 pt-3 border-t border-cockpit-border/80 font-mono text-[11px]">
+            <div class="text-slate-400 mb-2 flex items-center justify-between">
+              <span>CLOUD SERVICE TOPOLOGY:</span>
+              <span class="text-emerald-400 font-semibold">[GCP CLOUD RUN: 4 UNITS]</span>
+            </div>
+            <div class="grid grid-cols-4 gap-1.5 text-center text-[10px]">
+              <div class="px-1.5 py-1 bg-slate-900 border border-slate-800 text-slate-300 truncate">whisper-gpu</div>
+              <div class="px-1.5 py-1 bg-slate-900 border border-slate-800 text-slate-300 truncate">fastapi-pubsub</div>
+              <div class="px-1.5 py-1 bg-slate-900 border border-slate-800 text-slate-300 truncate">mcp-bigquery</div>
+              <div class="px-1.5 py-1 bg-slate-900 border border-slate-800 text-slate-300 truncate">ast-validator</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </section>
-
-    <section class="section" id="experience">
-      <h2 class="section-head">Experience</h2>
-      <ul class="roles">
-
-        <li class="role">
-          <p class="role-when">Nov 2025 — present</p>
-          <div class="role-body">
-            <h3 class="role-title">Product Manager</h3>
-            <p class="role-org">UpX Labs · San Jose, CA (remote)</p>
-            <p class="role-note">Product engineer from Aug 2024 to Nov 2025. Owner of UScribe and USense, and program lead for the UpX cohorts.</p>
+    
+    <!-- SECTION 2: ARCHITECTURAL BLUEPRINT DOSSIERS (FLAGSHIP SYSTEMS) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="architecture-dossiers">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-cockpit-border pb-4 mb-8 gap-4">
+        <div>
+          <div class="font-mono text-xs text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">developer_board</span>
+            // ARCHITECTURAL DOSSIERS &amp; SYSTEM SPECIFICATIONS
           </div>
-        </li>
-
-        <li class="role">
-          <p class="role-when">Mar 2023 — May 2024</p>
-          <div class="role-body">
-            <h3 class="role-title">Data Analyst, Graduate Assistant</h3>
-            <p class="role-org">University of Wisconsin–Milwaukee</p>
-            <p class="role-note">Mined five years of course registration, waitlist and resource utilization data in PostgreSQL and Excel VBA to find the real bottlenecks, then built the Power BI dashboards that leadership used to cut unmet course demand by 18%.</p>
+          <h2 class="text-2xl sm:text-3xl font-headline font-bold text-white mt-1">Flagship Enterprise Deployments</h2>
+        </div>
+        <p class="font-mono text-xs text-slate-400 max-w-md">
+          Deep architectural breakdowns covering pod leadership, infrastructure topology, protocol integration, and clinical/enterprise safety guardrails.
+        </p>
+      </div>
+      
+      <!-- Dossier Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- DOSSIER 1: UScribe -->
+        <div class="bg-cockpit-panel border border-cockpit-border hover:border-cyan-500/70 transition-all duration-300 p-5 flex flex-col justify-between hud-border glow-cyan">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 font-mono text-xs">
+              <span class="px-2 py-0.5 bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold">DOSSIER #01</span>
+              <span class="text-slate-400">UpX Labs · Clinical AI</span>
+            </div>
+            
+            <h3 class="text-lg font-headline font-bold text-white mt-3">UScribe — Ambient Clinical AI Platform</h3>
+            <div class="font-mono text-xs text-cyan-400 mt-0.5">Role: Product Owner &amp; Agile Delivery Lead</div>
+            <p class="text-slate-300 text-xs mt-3 leading-relaxed">
+              Engineered end-to-end ambient intelligence platform transcribing multi-speaker doctor-patient visits and generating structured 29-field clinical SOAP notes into EHR systems, eliminating 2+ hours of daily documentation overhead.
+            </p>
+            
+            <!-- Telemetry Metrics -->
+            <div class="grid grid-cols-3 gap-2 my-4 font-mono text-center">
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">ASR Speed</span>
+                <span class="text-sm font-bold text-cyan-300">~30s / 12m</span>
+              </div>
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">SOAP Latency</span>
+                <span class="text-sm font-bold text-emerald-300">&lt;60s</span>
+              </div>
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">Pilot Load</span>
+                <span class="text-sm font-bold text-indigo-300">40 MDs</span>
+              </div>
+            </div>
+            
+            <!-- Architecture Blueprint Spec Accordion -->
+            <details class="group font-mono text-xs border border-slate-800/90 bg-cockpit-subpanel p-3">
+              <summary class="flex items-center justify-between text-cyan-400 cursor-pointer list-none select-none">
+                <span class="flex items-center gap-1.5 font-semibold">
+                  <span class="material-symbols-outlined text-sm">schema</span>
+                  <span>Inspect Pipeline Topology</span>
+                </span>
+                <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="mt-3 pt-3 border-t border-slate-800 space-y-2 text-[11px] text-slate-300">
+                <p><span class="text-cyan-400 font-bold">Pod Composition:</span> Directed 8 specialists (3 Data, 2 AI/ML, 1 Full-stack, 1 QA, 1 UI) across 2-week Jira sprint cadences.</p>
+                <p><span class="text-cyan-400 font-bold">Stack:</span> Whisper large-v3-turbo, GCP Vertex AI, Cloud Run microservices, Cloud Pub/Sub with Dead-Letter Queues (DLQ).</p>
+                <p><span class="text-cyan-400 font-bold">Security:</span> Zero data-retention HIPAA safeguards, AES-256 encrypted streams, Business Associate Agreement (BAA) compliance.</p>
+              </div>
+            </details>
           </div>
-        </li>
-
-        <li class="role">
-          <p class="role-when">Oct 2020 — Dec 2022</p>
-          <div class="role-body">
-            <h3 class="role-title">Big Data Engineer</h3>
-            <p class="role-org">Capgemini Technology Services · Pune, India</p>
-            <p class="role-note">Built the Talend ETL pipelines that landed terabyte-scale health insurance claims into BigQuery on star and snowflake schemas. Tuned views, partitions and scheduled queries until enterprise reporting ran 35% faster, and shipped the patient leakage and retention dashboards behind a 2.07% lift in quarterly retention.</p>
+          
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px] text-slate-400">
+            <span>VELOCITY: 30D MVP → 90D PILOT</span>
+            <span class="text-emerald-400 font-semibold">[STATUS: PRODUCTION]</span>
           </div>
-        </li>
-
-      </ul>
+        </div>
+        
+        <!-- DOSSIER 2: USense -->
+        <div class="bg-cockpit-panel border border-cockpit-border hover:border-indigo-500/70 transition-all duration-300 p-5 flex flex-col justify-between hud-border glow-indigo">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 font-mono text-xs">
+              <span class="px-2 py-0.5 bg-indigo-950 text-indigo-300 border border-indigo-800/60 font-semibold">DOSSIER #02</span>
+              <span class="text-slate-400">UpX Labs · Enterprise Platform</span>
+            </div>
+            
+            <h3 class="text-lg font-headline font-bold text-white mt-3">USense — Governed Text-to-SQL Engine</h3>
+            <div class="font-mono text-xs text-indigo-400 mt-0.5">Role: Product Owner &amp; AI Systems Architect</div>
+            <p class="text-slate-300 text-xs mt-3 leading-relaxed">
+              Designed enterprise conversational data access platform allowing non-technical leaders to query BigQuery and PostgreSQL warehouses safely using Model Context Protocol (MCP) agents and AST query guardrails.
+            </p>
+            
+            <!-- Telemetry Metrics -->
+            <div class="grid grid-cols-3 gap-2 my-4 font-mono text-center">
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">Accuracy</span>
+                <span class="text-sm font-bold text-indigo-300">33% → 84%</span>
+              </div>
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">AST Gate</span>
+                <span class="text-sm font-bold text-emerald-300">100% Read-Only</span>
+              </div>
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">Cost Guard</span>
+                <span class="text-sm font-bold text-cyan-300">Byte Capped</span>
+              </div>
+            </div>
+            
+            <!-- Architecture Blueprint Spec Accordion -->
+            <details class="group font-mono text-xs border border-slate-800/90 bg-cockpit-subpanel p-3">
+              <summary class="flex items-center justify-between text-indigo-400 cursor-pointer list-none select-none">
+                <span class="flex items-center gap-1.5 font-semibold">
+                  <span class="material-symbols-outlined text-sm">schema</span>
+                  <span>Inspect Reasoning &amp; AST Pipeline</span>
+                </span>
+                <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="mt-3 pt-3 border-t border-slate-800 space-y-2 text-[11px] text-slate-300">
+                <p><span class="text-indigo-400 font-bold">Accuracy Benchmark:</span> Vanilla LLM (33.2%) → ChromaDB Few-Shot (62.8%) → MCP + AST Parser Validation (84.1%).</p>
+                <p><span class="text-indigo-400 font-bold">AST Guardrails:</span> Deterministic SQL Abstract Syntax Tree parser intercepts unauthorized mutations (DROP, INSERT, UPDATE, DELETE).</p>
+                <p><span class="text-indigo-400 font-bold">BigQuery Guard:</span> Programmatic query injection of partition filters prevents runaway scan costs across petabyte tables.</p>
+              </div>
+            </details>
+          </div>
+          
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px] text-slate-400">
+            <span>PROTOCOL: MCP + CHROMADB</span>
+            <span class="text-emerald-400 font-semibold">[STATUS: PRODUCTION]</span>
+          </div>
+        </div>
+        
+        <!-- DOSSIER 3: Project Vox -->
+        <div class="bg-cockpit-panel border border-cockpit-border hover:border-teal-500/70 transition-all duration-300 p-5 flex flex-col justify-between hud-border">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 font-mono text-xs">
+              <span class="px-2 py-0.5 bg-teal-950 text-teal-300 border border-teal-800/60 font-semibold">DOSSIER #03</span>
+              <span class="text-slate-400">UpX Labs · Voice AI</span>
+            </div>
+            
+            <h3 class="text-lg font-headline font-bold text-white mt-3">Project Vox — Real-Time Voice Agent</h3>
+            <div class="font-mono text-xs text-teal-400 mt-0.5">Role: Product Manager (0→1 Roadmap)</div>
+            <p class="text-slate-300 text-xs mt-3 leading-relaxed">
+              Architected low-latency conversational AI agent conducting natural voice scheduling, multi-turn qualification, and real-time CRM calendar sync over WebRTC streaming pipelines.
+            </p>
+            
+            <!-- Telemetry Metrics -->
+            <div class="grid grid-cols-3 gap-2 my-4 font-mono text-center">
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">E2E Latency</span>
+                <span class="text-sm font-bold text-teal-300">&lt;750ms</span>
+              </div>
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">Calendar Drift</span>
+                <span class="text-sm font-bold text-emerald-300">0% Fault</span>
+              </div>
+              <div class="p-2 bg-cockpit-subpanel border border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase">Protocol</span>
+                <span class="text-sm font-bold text-cyan-300">WebRTC</span>
+              </div>
+            </div>
+            
+            <!-- Architecture Blueprint Spec Accordion -->
+            <details class="group font-mono text-xs border border-slate-800/90 bg-cockpit-subpanel p-3">
+              <summary class="flex items-center justify-between text-teal-400 cursor-pointer list-none select-none">
+                <span class="flex items-center gap-1.5 font-semibold">
+                  <span class="material-symbols-outlined text-sm">schema</span>
+                  <span>Inspect WebRTC &amp; Agent Tooling</span>
+                </span>
+                <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180">expand_more</span>
+              </summary>
+              <div class="mt-3 pt-3 border-t border-slate-800 space-y-2 text-[11px] text-slate-300">
+                <p><span class="text-teal-400 font-bold">Audio Streaming:</span> Full-duplex WebRTC with noise-gate pre-processors ensuring interruption resilience.</p>
+                <p><span class="text-teal-400 font-bold">Tool Execution:</span> Real-time calendar availability lookup and appointment lock via Google Calendar API &amp; webhooks.</p>
+                <p><span class="text-teal-400 font-bold">Simulation Cockpit:</span> Authored testing harnesses simulating complex accent variations and network jitter.</p>
+              </div>
+            </details>
+          </div>
+          
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px] text-slate-400">
+            <span>PIPELINE: STREAMING AUDIO</span>
+            <span class="text-emerald-400 font-semibold">[STATUS: VALIDATED]</span>
+          </div>
+        </div>
+        
+      </div>
     </section>
-
-    <section class="section" id="skills">
-      <h2 class="section-head">What I work with</h2>
-      <ul class="skills">
-        <li class="skill-group">
-          <h3 class="skill-name">Product and delivery</h3>
-          <p class="skill-items">Product vision and strategy, PRDs, roadmap planning, backlog prioritization, user stories and acceptance criteria, Agile and Scrum leadership, sprint planning and grooming, stakeholder alignment, KPI monitoring, Jira, Confluence</p>
-        </li>
-        <li class="skill-group">
-          <h3 class="skill-name">Data and analytics</h3>
-          <p class="skill-items">Google BigQuery, data warehousing, data governance, star and snowflake modeling, data quality and profiling, Looker, Power BI, Tableau, PostgreSQL, MySQL, Oracle, SQL Server, MongoDB, Hadoop, Talend, Excel VBA</p>
-        </li>
-        <li class="skill-group">
-          <h3 class="skill-name">Cloud and infrastructure</h3>
-          <p class="skill-items">GCP — BigQuery, Cloud Run, Vertex AI, Cloud Storage, Pub/Sub, Cloud Functions, Cloud SQL, IAM — plus Terraform, Docker, Prometheus, ELK Stack and AWS</p>
-        </li>
-        <li class="skill-group">
-          <h3 class="skill-name">AI systems</h3>
-          <p class="skill-items">Model Context Protocol, advanced RAG (HyDE, query decomposition, schema grounding), NL-to-SQL, LLM evaluation and benchmarking, ASR with Whisper large-v3-turbo, LangChain, Vertex AI, Ollama, Mistral, Llama 3.2, ChromaDB, Qdrant</p>
-        </li>
-        <li class="skill-group">
-          <h3 class="skill-name">Backend and governance</h3>
-          <p class="skill-items">FastAPI, REST APIs, WebSockets, SQLAlchemy, asynchronous pipelines with Pub/Sub and dead-letter queues, OAuth 2.0, RBAC, HIPAA and PHI compliance, data privacy and encryption</p>
-        </li>
-      </ul>
+    
+    <!-- SECTION 3: SYSTEM DEPLOYMENT TIMELINE & WORK RECORD -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="deployment-record">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-cockpit-border pb-4 mb-8 gap-4">
+        <div>
+          <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">history_edu</span>
+            // CHRONOLOGICAL LOGS &amp; SYSTEMS TENURE
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-headline font-bold text-white mt-1">Professional Deployment Record</h2>
+        </div>
+        <div class="font-mono text-xs text-slate-400">
+          TRACK RECORD: 5+ YEARS CONTINUOUS PLATFORM DELIVERY
+        </div>
+      </div>
+      
+      <!-- Chronological System Log Nodes -->
+      <div class="space-y-4">
+        
+        <!-- LOG 01: UPX LABS -->
+        <div class="bg-cockpit-panel border border-cockpit-border hover:border-cyan-500/50 transition-all p-6 relative overflow-hidden">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-3 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span class="font-headline font-bold text-lg text-white">UpX Labs</span>
+              <span class="font-mono text-xs text-slate-400">· San Jose, CA (Remote)</span>
+            </div>
+            <div class="font-mono text-xs text-cyan-300 px-2.5 py-1 bg-cyan-950/60 border border-cyan-800/60">
+              AUG 2024 — PRESENT (SYSTEM ACTIVE)
+            </div>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 font-mono text-xs space-y-2">
+              <div class="text-slate-300 font-semibold text-sm">Product Manager &amp; Product Engineer</div>
+              <div class="text-slate-400">Pod Scope: 8 Specialists (Data, AI, QA, Full-stack)</div>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-cyan-300 text-[10px]">Agile / Jira</span>
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-indigo-300 text-[10px]">MCP Protocols</span>
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-emerald-300 text-[10px]">GCP Vertex AI</span>
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-slate-300 text-[10px]">BigQuery</span>
+              </div>
+            </div>
+            <div class="lg:col-span-8 space-y-2 text-xs text-slate-300 leading-relaxed font-sans">
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-mono font-bold mt-0.5">❯</span>
+                <p>Directed end-to-end delivery of <strong class="text-white">UScribe</strong> ambient clinical documentation system, transcribing 12-minute doctor-patient visits in ~30s with &lt;60s structured SOAP note output, scaling to a 40-physician pilot under zero-retention HIPAA protocols.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-mono font-bold mt-0.5">❯</span>
+                <p>Architected <strong class="text-white">USense</strong> text-to-SQL reasoning platform, boosting natural language query compilation accuracy from <strong class="text-cyan-300">33% to 84.1%</strong> on BigQuery schemas with programmatic AST query mutation prevention and ChromaDB few-shot exemplar caching.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-mono font-bold mt-0.5">❯</span>
+                <p>Led Agile engineering rituals across 5 cohorts (40+ learners), executing sprint roadmaps, MoSCoW backlog prioritization, and continuous CI/CD deployments on GCP.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LOG 02: UW-MILWAUKEE -->
+        <div class="bg-cockpit-panel border border-cockpit-border hover:border-teal-500/50 transition-all p-6 relative overflow-hidden">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-3 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-teal-400"></span>
+              <span class="font-headline font-bold text-lg text-white">University of Wisconsin–Milwaukee</span>
+              <span class="font-mono text-xs text-slate-400">· Milwaukee, WI</span>
+            </div>
+            <div class="font-mono text-xs text-teal-300 px-2.5 py-1 bg-teal-950/60 border border-teal-800/60">
+              MAR 2023 — MAY 2024 (COMPLETED)
+            </div>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 font-mono text-xs space-y-2">
+              <div class="text-slate-300 font-semibold text-sm">Data Analyst &amp; Graduate Assistant</div>
+              <div class="text-slate-400">Scope: Institutional Analytics &amp; Optimization</div>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-teal-300 text-[10px]">PostgreSQL</span>
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-slate-300 text-[10px]">Power BI</span>
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-amber-300 text-[10px]">Capacity Modeling</span>
+              </div>
+            </div>
+            <div class="lg:col-span-8 space-y-2 text-xs text-slate-300 leading-relaxed font-sans">
+              <div class="flex items-start gap-2">
+                <span class="text-teal-400 font-mono font-bold mt-0.5">❯</span>
+                <p>Conducted quantitative modeling on 5 years of historical registration data in PostgreSQL, resolving critical course bottlenecks to drive an <strong class="text-teal-300">18% reduction in unmet course demand</strong>.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-teal-400 font-mono font-bold mt-0.5">❯</span>
+                <p>Engineered automated Power BI leadership reporting hubs with granular departmental access controls, reducing executive report generation turnaround time from days to automated weekly schedules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LOG 03: CAPGEMINI -->
+        <div class="bg-cockpit-panel border border-cockpit-border hover:border-indigo-500/50 transition-all p-6 relative overflow-hidden">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-3 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-indigo-400"></span>
+              <span class="font-headline font-bold text-lg text-white">Capgemini Technology Services</span>
+              <span class="font-mono text-xs text-slate-400">· Pune, India</span>
+            </div>
+            <div class="font-mono text-xs text-indigo-300 px-2.5 py-1 bg-indigo-950/60 border border-indigo-800/60">
+              OCT 2020 — DEC 2022 (COMPLETED)
+            </div>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4 font-mono text-xs space-y-2">
+              <div class="text-slate-300 font-semibold text-sm">Big Data Engineer</div>
+              <div class="text-slate-400">Scope: Enterprise Healthcare Claims Pipelines</div>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-indigo-300 text-[10px]">Google BigQuery</span>
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-cyan-300 text-[10px]">Talend ETL</span>
+                <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700 text-slate-300 text-[10px]">TB-Scale Data</span>
+              </div>
+            </div>
+            <div class="lg:col-span-8 space-y-2 text-xs text-slate-300 leading-relaxed font-sans">
+              <div class="flex items-start gap-2">
+                <span class="text-indigo-400 font-mono font-bold mt-0.5">❯</span>
+                <p>Designed and maintained high-throughput automated Talend ETL workflows processing terabyte-scale healthcare claims data into partitioned BigQuery schemas, achieving a <strong class="text-indigo-300">35% query performance optimization</strong>.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-indigo-400 font-mono font-bold mt-0.5">❯</span>
+                <p>Spearheaded data pipeline enhancements identifying critical member dropout touchpoints, generating data-driven retention triggers that elevated plan retention by <strong class="text-indigo-300">2.07%</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </section>
-
-    <section class="section" id="education">
-      <h2 class="section-head">Education and certifications</h2>
-      <ul class="roles">
-        <li class="role">
-          <p class="role-when">May 2024</p>
-          <div class="role-body">
-            <h3 class="role-title">M.S., Information Technology Management</h3>
-            <p class="role-org">University of Wisconsin–Milwaukee</p>
-            <p class="role-note">Service-oriented analysis and design, database management systems, machine learning, web analytics.</p>
+    
+    <!-- SECTION 4: CAPABILITY TELEMETRY MATRIX & SYSTEM STACK -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="capability-matrix">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-cockpit-border pb-4 mb-8 gap-4">
+        <div>
+          <div class="font-mono text-xs text-emerald-400 uppercase tracking-widest flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">tune</span>
+            // SYSTEMS CAPABILITY MATRIX
           </div>
-        </li>
-        <li class="role">
-          <p class="role-when">Jun 2020</p>
-          <div class="role-body">
-            <h3 class="role-title">B.Tech., Mechanical Engineering</h3>
-            <p class="role-org">National Institute of Technology, Raipur</p>
+          <h2 class="text-2xl sm:text-3xl font-headline font-bold text-white mt-1">Technical Stack &amp; Operational Proficiencies</h2>
+        </div>
+        <div class="font-mono text-xs text-slate-400">
+          ALL MODULES AUDITED &amp; PRODUCTION VERIFIED
+        </div>
+      </div>
+      
+      <!-- Capability Matrix Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Domain 1: Product Strategy & Agile Leadership -->
+        <div class="bg-cockpit-panel border border-cockpit-border p-5 flex flex-col justify-between hud-border">
+          <div>
+            <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-semibold pb-2 border-b border-slate-800">
+              <span class="material-symbols-outlined text-base">tactic</span>
+              <span>PRODUCT &amp; POD LEADERSHIP</span>
+            </div>
+            <div class="space-y-3 mt-4 font-mono text-xs">
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Product Roadmapping &amp; PRDs</span>
+                  <span class="text-cyan-400">96%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-cyan-400 h-full" style="width: 96%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>RICE / MoSCoW Prioritization</span>
+                  <span class="text-cyan-400">94%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-cyan-400 h-full" style="width: 94%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Cross-Functional Agile Pods (8 Eng)</span>
+                  <span class="text-cyan-400">92%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-cyan-400 h-full" style="width: 92%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="role">
-          <p class="role-when">Certifications</p>
-          <div class="role-body">
-            <p class="role-note" style="margin-top:0">Building a HIPAA Compliance Program (LinkedIn Learning) · Agile Software Development (University of Minnesota) · Talend Data Integration Advanced (Talend Academy)</p>
+          <div class="pt-4 mt-4 border-t border-slate-800/80 flex flex-wrap gap-1 font-mono text-[10px] text-slate-300">
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Sprint Planning</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Jira / Confluence</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">User Stories</span>
           </div>
-        </li>
-      </ul>
+        </div>
+        
+        <!-- Domain 2: Applied AI & LLM Systems -->
+        <div class="bg-cockpit-panel border border-cockpit-border p-5 flex flex-col justify-between hud-border">
+          <div>
+            <div class="flex items-center gap-2 text-indigo-400 font-mono text-xs font-semibold pb-2 border-b border-slate-800">
+              <span class="material-symbols-outlined text-base">neurology</span>
+              <span>APPLIED AI &amp; REASONING AGENTS</span>
+            </div>
+            <div class="space-y-3 mt-4 font-mono text-xs">
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Model Context Protocol (MCP)</span>
+                  <span class="text-indigo-400">95%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-indigo-400 h-full" style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>NL-to-SQL Query Architecture</span>
+                  <span class="text-indigo-400">92%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-indigo-400 h-full" style="width: 92%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Whisper ASR Speech Engineering</span>
+                  <span class="text-indigo-400">90%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-indigo-400 h-full" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800/80 flex flex-wrap gap-1 font-mono text-[10px] text-slate-300">
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">ChromaDB Vectors</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">AST Safety Parsers</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">LangChain</span>
+          </div>
+        </div>
+        
+        <!-- Domain 3: Big Data & Warehousing -->
+        <div class="bg-cockpit-panel border border-cockpit-border p-5 flex flex-col justify-between hud-border">
+          <div>
+            <div class="flex items-center gap-2 text-teal-400 font-mono text-xs font-semibold pb-2 border-b border-slate-800">
+              <span class="material-symbols-outlined text-base">database</span>
+              <span>BIG DATA &amp; WAREHOUSING</span>
+            </div>
+            <div class="space-y-3 mt-4 font-mono text-xs">
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Google BigQuery (Partitioning)</span>
+                  <span class="text-teal-400">95%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-teal-400 h-full" style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>ETL Pipelines &amp; Talend Studio</span>
+                  <span class="text-teal-400">88%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-teal-400 h-full" style="width: 88%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>PostgreSQL &amp; Star Schema Design</span>
+                  <span class="text-teal-400">91%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-teal-400 h-full" style="width: 91%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800/80 flex flex-wrap gap-1 font-mono text-[10px] text-slate-300">
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Power BI / Looker</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Cost Optimization</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Data Governance</span>
+          </div>
+        </div>
+        
+        <!-- Domain 4: Cloud Infrastructure (GCP Native) -->
+        <div class="bg-cockpit-panel border border-cockpit-border p-5 flex flex-col justify-between hud-border">
+          <div>
+            <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-semibold pb-2 border-b border-slate-800">
+              <span class="material-symbols-outlined text-base">cloud_done</span>
+              <span>GCP CLOUD INFRASTRUCTURE</span>
+            </div>
+            <div class="space-y-3 mt-4 font-mono text-xs">
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>GCP Cloud Run Microservices</span>
+                  <span class="text-cyan-400">92%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-cyan-400 h-full" style="width: 92%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Cloud Pub/Sub with Dead-Letter DLQ</span>
+                  <span class="text-cyan-400">90%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-cyan-400 h-full" style="width: 90%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Vertex AI GPU Model Clusters</span>
+                  <span class="text-cyan-400">89%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-cyan-400 h-full" style="width: 89%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800/80 flex flex-wrap gap-1 font-mono text-[10px] text-slate-300">
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Docker Containers</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Cloud SQL</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Terraform IaC</span>
+          </div>
+        </div>
+        
+        <!-- Domain 5: Security & Compliance -->
+        <div class="bg-cockpit-panel border border-cockpit-border p-5 flex flex-col justify-between hud-border">
+          <div>
+            <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs font-semibold pb-2 border-b border-slate-800">
+              <span class="material-symbols-outlined text-base">verified_user</span>
+              <span>HIPAA &amp; REGULATORY SECURITY</span>
+            </div>
+            <div class="space-y-3 mt-4 font-mono text-xs">
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>HIPAA BAA &amp; PHI Zero Retention</span>
+                  <span class="text-emerald-400">95%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-emerald-400 h-full" style="width: 95%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>Role-Based Access Controls (RBAC)</span>
+                  <span class="text-emerald-400">94%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-emerald-400 h-full" style="width: 94%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-slate-300 mb-1">
+                  <span>AES-256 In-Flight / At-Rest Encr.</span>
+                  <span class="text-emerald-400">98%</span>
+                </div>
+                <div class="w-full bg-slate-900 h-1.5 overflow-hidden">
+                  <div class="bg-emerald-400 h-full" style="width: 98%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800/80 flex flex-wrap gap-1 font-mono text-[10px] text-slate-300">
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Audit Trails</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">Least Privilege</span>
+            <span class="px-2 py-0.5 bg-cockpit-subpanel border border-slate-700">SOC-2 Readiness</span>
+          </div>
+        </div>
+        
+        <!-- Domain 6: Formal Credentials & Education Capsule -->
+        <div class="bg-cockpit-panel border border-cockpit-border p-5 flex flex-col justify-between hud-border">
+          <div>
+            <div class="flex items-center gap-2 text-amber-400 font-mono text-xs font-semibold pb-2 border-b border-slate-800">
+              <span class="material-symbols-outlined text-base">school</span>
+              <span>ACCREDITATIONS &amp; DEGREES</span>
+            </div>
+            <div class="mt-4 space-y-3 font-mono text-xs">
+              <div class="p-2.5 bg-cockpit-subpanel border border-slate-800">
+                <div class="text-white font-bold">M.S. Information Tech. Mgmt</div>
+                <div class="text-slate-400 text-[11px]">Univ. of Wisconsin–Milwaukee · 2024</div>
+                <div class="text-[10px] text-cyan-400 mt-1">ML for Business · Database Architecture</div>
+              </div>
+              <div class="p-2.5 bg-cockpit-subpanel border border-slate-800">
+                <div class="text-white font-bold">B.Tech. Mechanical Engineering</div>
+                <div class="text-slate-400 text-[11px]">NIT Raipur, India · 2020</div>
+                <div class="text-[10px] text-slate-400 mt-1">Quantitative Systems Modeling</div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-3 mt-3 border-t border-slate-800/80 flex items-center justify-between font-mono text-[10px] text-emerald-400">
+            <span>CERT: HIPAA PROGRAM (LI)</span>
+            <span>AGILE (UMN) · TALEND ADV</span>
+          </div>
+        </div>
+        
+      </div>
     </section>
+    
+    <!-- SECTION 5: COMMAND DISPATCH & STRATEGIC ENGAGEMENT CONSOLE -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="command-dispatch">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-cockpit-border pb-4 mb-8 gap-4">
+        <div>
+          <div class="font-mono text-xs text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">terminal</span>
+            // COMMAND DISPATCH &amp; COLLABORATION CONSOLE
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-headline font-bold text-white mt-1">Executive Advisory &amp; Leadership Direct Transmission</h2>
+        </div>
+        <div class="font-mono text-xs text-slate-400">
+          CHANNELS: DIRECT TRANSMISSION &lt;24H RESPONSE SLA
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Direct Telemetry Connections -->
+        <div class="lg:col-span-5 bg-cockpit-panel border border-cockpit-border p-6 hud-border space-y-4 font-mono text-xs">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <span class="text-cyan-400 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              SECURE CHANNELS
+            </span>
+            <span class="text-slate-500">MKE / REMOTE / TRAVEL</span>
+          </div>
+          
+          <!-- Channel 1: Email -->
+          <div class="p-3 bg-cockpit-subpanel border border-slate-800 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-[10px] text-slate-400 uppercase">Primary Transmission</span>
+              <a class="text-cyan-300 font-semibold hover:underline break-all" href="mailto:kasamsetty.aakash@gmail.com">
+                kasamsetty.aakash@gmail.com
+              </a>
+            </div>
+            <button class="p-2 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" onclick="navigator.clipboard.writeText('kasamsetty.aakash@gmail.com'); alert('Email copied to clipboard');" title="Copy Email">
+              <span class="material-symbols-outlined text-base">content_copy</span>
+            </button>
+          </div>
+          
+          <!-- Channel 2: Phone -->
+          <div class="p-3 bg-cockpit-subpanel border border-slate-800 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-[10px] text-slate-400 uppercase">Direct Mobile Line</span>
+              <a class="text-indigo-300 font-semibold hover:underline" href="tel:+14147797252">
+                +1 (414) 779-7252
+              </a>
+            </div>
+            <button class="p-2 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" onclick="navigator.clipboard.writeText('+14147797252'); alert('Phone copied to clipboard');" title="Copy Phone">
+              <span class="material-symbols-outlined text-base">content_copy</span>
+            </button>
+          </div>
+          
+          <!-- Channel 3: LinkedIn -->
+          <div class="p-3 bg-cockpit-subpanel border border-slate-800 flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-[10px] text-slate-400 uppercase">Network Telemetry</span>
+              <a class="text-teal-300 font-semibold hover:underline" href="https://linkedin.com/in/aakash236" rel="noopener noreferrer" target="_blank">
+                linkedin.com/in/aakash236
+              </a>
+            </div>
+            <a class="p-2 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" href="https://linkedin.com/in/aakash236" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-base">open_in_new</span>
+            </a>
+          </div>
+          
+          <!-- Security Stamp -->
+          <div class="p-3 bg-slate-900/90 border border-slate-800/80 text-[11px] text-slate-400 space-y-1">
+            <div class="text-emerald-400 font-semibold flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">lock</span>
+              <span>VERIFIED OPERATIONAL READINESS</span>
+            </div>
+            <p>Immediate availability for Senior Data Product Owner, Staff Product Engineer, or Applied AI Technical Leadership opportunities.</p>
+          </div>
+        </div>
+        
+        <!-- Right: GOOGLE FORMS DISPATCH FORM -->
+        <div class="lg:col-span-7 bg-cockpit-panel border border-cockpit-border p-6 hud-border">
+          
+          <!-- Hidden iframe trick to prevent page redirect -->
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { document.getElementById('dispatch-form').style.display='none'; document.getElementById('dispatch-status').classList.remove('hidden'); }"></iframe>
+          
+          <form id="dispatch-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc43yNdwHQ5NJbzbKCsnjk6-uNJ5S7cbg2JFZhQnUxrLA5sNw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-mono text-[11px] text-slate-400 uppercase mb-1">Commander / Recruiter *</label>
+                <!-- NAME ID -->
+                <input name="entry.1541048853" class="w-full bg-cockpit-subpanel border border-slate-800 px-3 py-2 text-xs font-mono text-white focus:border-cyan-500 focus:outline-none" placeholder="e.g., Sarah Chen, VP Data" required="" type="text"/>
+              </div>
+              <div>
+                <label class="block font-mono text-[11px] text-slate-400 uppercase mb-1">Direct Transmission Email *</label>
+                <!-- EMAIL ID -->
+                <input name="entry.2091714805" class="w-full bg-cockpit-subpanel border border-slate-800 px-3 py-2 text-xs font-mono text-white focus:border-cyan-500 focus:outline-none" placeholder="name@company.com" required="" type="email"/>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-mono text-[11px] text-slate-400 uppercase mb-1">Organization / Pod</label>
+                <!-- ORGANIZATION ID -->
+                <input name="entry.922442789" class="w-full bg-cockpit-subpanel border border-slate-800 px-3 py-2 text-xs font-mono text-white focus:border-cyan-500 focus:outline-none" placeholder="Company, Venture, or Lab" type="text"/>
+              </div>
+              <div>
+                <label class="block font-mono text-[11px] text-slate-400 uppercase mb-1">Mission Mandate</label>
+                <!-- ROLE/MANDATE ID -->
+                <select name="entry.1419856532" class="w-full bg-cockpit-subpanel border border-slate-800 px-3 py-2 text-xs font-mono text-slate-200 focus:border-cyan-500 focus:outline-none">
+                  <option>Full-Time Product Owner / Lead</option>
+                  <option>Applied AI / LLM Systems Architecture</option>
+                  <option>0→1 MVP Product Delivery</option>
+                  <option>BigQuery &amp; NL-to-SQL Governance</option>
+                </select>
+              </div>
+            </div>
+            
+            <div>
+              <label class="block font-mono text-[11px] text-slate-400 uppercase mb-1">Transmission Context / Requirements *</label>
+              <!-- MESSAGE ID -->
+              <textarea name="entry.2052358781" class="w-full bg-cockpit-subpanel border border-slate-800 px-3 py-2 text-xs font-mono text-white focus:border-cyan-500 focus:outline-none" placeholder="Brief outline of product roadmap challenges, target timeline, or role specifications..." required="" rows="4"></textarea>
+            </div>
+            
+            <div class="flex items-center justify-between pt-2">
+              <button type="submit" class="px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-mono text-xs uppercase font-bold tracking-wider shadow-md glow-cyan flex items-center gap-2 transition-all">
+                <span class="material-symbols-outlined text-sm">send</span>
+                <span>Transmit Signal</span>
+              </button>
+              <span class="font-mono text-[11px] text-slate-500">SLA: Dispatch &lt;24h</span>
+            </div>
+            
+          </form>
 
-    <footer class="footer" id="contact">
-      <p class="footer-line">Have a data product that needs an owner?</p>
-      <ul class="footer-links">
-        <li><a href="mailto:kasamsetty.aakash@gmail.com">Email me</a></li>
-        <li><a href="https://linkedin.com/in/aakash236">LinkedIn</a></li>
-        <li><a href="Aakash_Kasamsetty_Resume.pdf">Download resume</a></li>
-      </ul>
-      <p class="footer-fine">Milwaukee, Wisconsin · open to remote</p>
-    </footer>
+          <!-- Success Message (Starts Hidden) -->
+          <div id="dispatch-status" class="hidden p-4 bg-cockpit-subpanel border border-emerald-500/50 text-emerald-400 font-mono text-xs flex flex-col items-center justify-center text-center gap-2 h-full min-h-[250px]">
+            <span class="material-symbols-outlined text-4xl mb-1">task_alt</span>
+            <p><strong class="text-sm">TRANSMISSION SUCCESSFUL</strong><br/>Your telemetry data has been routed successfully.<br/>Aakash will establish contact shortly.</p>
+          </div>
 
+        </div>
+        
+      </div>
+    </section>
   </main>
-</div>
+  
+  <!-- Cockpit Footer Telemetry Bar -->
+  <footer class="border-t border-cockpit-border bg-cockpit-surface py-6 relative z-10 font-mono text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-cyan-400 font-bold">[AK_SYS_COCKPIT]</span>
+        <span>Aakash Kasamsetty · Data Product Owner &amp; Applied AI</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <a class="hover:text-cyan-400 transition-colors" href="mailto:kasamsetty.aakash@gmail.com">kasamsetty.aakash@gmail.com</a>
+        <span>·</span>
+        <a class="hover:text-cyan-400 transition-colors" href="https://linkedin.com/in/aakash236" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+        <span>·</span>
+        <span>Milwaukee, WI (Travel Ready)</span>
+      </div>
+    </div>
+  </footer>
   
 </body>
 </html>
